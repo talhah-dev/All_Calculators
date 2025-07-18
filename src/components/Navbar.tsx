@@ -47,19 +47,25 @@ const Navbar = () => {
                         <DropdownMenuContent className="w-48">
                             <DropdownMenuLabel>Our Calculators</DropdownMenuLabel>
                             <DropdownMenuSeparator />
-                            <Link href="/calculators/loan">
-                                <DropdownMenuItem>Loan Calculator</DropdownMenuItem>
+                            <Link href="/calculators/finance">
+                                <DropdownMenuItem>Finance Calculator</DropdownMenuItem>
                             </Link>
-                            <Link href="/calculators/financial">
-                                <DropdownMenuItem>Financial Calculator</DropdownMenuItem>
+                            <Link href="/calculators/health">
+                                <DropdownMenuItem>Health Calculator</DropdownMenuItem>
                             </Link>
-                            <Link href="/calculators/mortgage">
-                                <DropdownMenuItem>Mortgage Calculator</DropdownMenuItem>
+                            <Link href="/calculators/lifestyle">
+                                <DropdownMenuItem>Lifestyle Calculator</DropdownMenuItem>
+                            </Link>
+                            <Link href="/calculators/math">
+                                <DropdownMenuItem>Math Calculator</DropdownMenuItem>
                             </Link>
                             {/* Add more calculator links as needed */}
                         </DropdownMenuContent>
                     </DropdownMenu>
 
+                    <Link href="/blog">
+                        <Button variant="ghost">Blog</Button>
+                    </Link>
                     <Link href="/contact">
                         <Button variant="ghost">Contact</Button>
                     </Link>
@@ -88,18 +94,24 @@ const Navbar = () => {
                                         <AccordionTrigger>Calculators</AccordionTrigger>
                                         <AccordionContent>
                                             <Link className="block py-1" href="/calculators/loan">
-                                                <Button variant="ghost">Loan Calculator</Button>
+                                                <Button variant="ghost">Finance Calculator</Button>
                                             </Link>
                                             <Link className="block py-1" href="/calculators/financial">
-                                                <Button variant="ghost">Financial Calculator</Button>
+                                                <Button variant="ghost">Health Calculator</Button>
                                             </Link>
                                             <Link className="block py-1" href="/calculators/mortgage">
-                                                <Button variant="ghost">Mortgage Calculator</Button>
+                                                <Button variant="ghost">Lifestyle Calculator</Button>
+                                            </Link>
+                                            <Link className="block py-1" href="/calculators/mortgage">
+                                                <Button variant="ghost">Math Calculator</Button>
                                             </Link>
                                         </AccordionContent>
                                     </AccordionItem>
                                 </Accordion>
 
+                                <Link href="/blog">
+                                    <Button variant="ghost" className="w-full justify-start">Blog</Button>
+                                </Link>
                                 <Link href="/contact">
                                     <Button variant="ghost" className="w-full justify-start">Contact</Button>
                                 </Link>
