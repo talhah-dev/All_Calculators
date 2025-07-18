@@ -1,6 +1,5 @@
 "use client";
 import Wrapper from '@/app/Wrapper'
-import { useState, useRef, useEffect, TouchEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -96,132 +95,7 @@ const blogPosts: BlogPost[] = [
 ];
 
 const page = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isSwiping, setIsSwiping] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [screenSize, setScreenSize] = useState({
-        isMobile: false,
-        isTablet: false,
-        isDesktop: false,
-    });
 
-    const sliderRef = useRef<HTMLDivElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    // Calculate visible items based on screen size
-    const visibleItems = screenSize.isDesktop ? 3 : screenSize.isTablet ? 2 : 1;
-    const maxIndex = Math.max(0, blogPosts.length - visibleItems);
-
-    // Initialize and update screen size
-    useEffect(() => {
-        const updateScreenSize = () => {
-            if (typeof window !== "undefined") {
-                const width = window.innerWidth;
-                setScreenSize({
-                    isMobile: width < 640,
-                    isTablet: width >= 640 && width < 1024,
-                    isDesktop: width >= 1024,
-                });
-            }
-        };
-
-        // Initial check
-        updateScreenSize();
-
-        // Listen for resize
-        window.addEventListener("resize", updateScreenSize);
-
-        return () => window.removeEventListener("resize", updateScreenSize);
-    }, []);
-
-    // Ensure current index is valid when screen size changes
-    useEffect(() => {
-        setCurrentIndex((prev) => Math.min(prev, maxIndex));
-    }, [screenSize, maxIndex]);
-
-    // Handle navigation
-    function handlePrevious() {
-        setCurrentIndex((prev) => Math.max(0, prev - 1));
-    }
-
-    function handleNext() {
-        setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
-    }
-
-    // Scroll to current index
-    useEffect(() => {
-        if (sliderRef.current) {
-            const scrollToIndex = () => {
-                if (sliderRef.current) {
-                    const cardWidth =
-                        sliderRef.current.querySelector(".carousel-item")?.clientWidth || 0;
-                    const scrollLeft = cardWidth * currentIndex;
-
-                    sliderRef.current.scrollTo({
-                        left: scrollLeft,
-                        behavior: "smooth",
-                    });
-                }
-            };
-
-            // Small delay to ensure the DOM has updated
-            const timeoutId = setTimeout(scrollToIndex, 50);
-            return () => clearTimeout(timeoutId);
-        }
-    }, [currentIndex, screenSize]);
-
-    // Touch event handlers for swipe functionality
-    const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
-        setIsSwiping(true);
-        setStartX(e.touches[0].clientX);
-    };
-
-    const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
-        if (!isSwiping) return;
-
-        const currentX = e.touches[0].clientX;
-        const diff = startX - currentX;
-
-        // Prevent default to stop page scrolling during swipe
-        if (Math.abs(diff) > 5) {
-            e.preventDefault();
-        }
-    };
-
-    const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
-        if (!isSwiping) return;
-
-        const currentX = e.changedTouches[0].clientX;
-        const diff = startX - currentX;
-
-        // Determine if swipe is significant
-        if (Math.abs(diff) > 50) {
-            if (diff > 0 && currentIndex < maxIndex) {
-                handleNext();
-            } else if (diff < 0 && currentIndex > 0) {
-                handlePrevious();
-            }
-        }
-
-        setIsSwiping(false);
-    };
-
-    // Progress indicators
-    const renderProgressIndicators = () => {
-        return (
-            <div className="mt-6 flex justify-center space-x-2">
-                {Array.from({ length: maxIndex + 1 }, (_, i) => (
-                    <button
-                        key={i}
-                        onClick={() => setCurrentIndex(i)}
-                        className={`h-2 rounded-full transition-all ${i === currentIndex ? "bg-primary w-6" : "bg-primary/30 w-2"
-                            }`}
-                        aria-label={`Go to slide ${i + 1}`}
-                    />
-                ))}
-            </div>
-        );
-    };
     return (
         <Wrapper>
 
