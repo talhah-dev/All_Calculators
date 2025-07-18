@@ -7,8 +7,9 @@ import { evaluate } from "mathjs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import PricingSectionCards from '@/components/Home/PricingSectionCards'
-import Footer from '@/components/Footer'
 import Services from '@/components/Home/Services'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 const sciButtons = [
     ["sin", "cos", "tan", "Deg", "Rad"],
@@ -368,8 +369,28 @@ const Page = () => {
                 <PricingSectionCards />
             </div>
 
-            <div className="md:mt-20 mt-10">
-                <Footer />
+            <div className="bg-primary md:mt-20 mt-10 w-full py-12 md:py-16">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-primary-foreground text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+                        Ready to Transform Your Vision into Reality?
+                    </h2>
+
+                    <p className="text-primary-foreground/90 mx-auto mt-3 max-w-2xl text-lg">
+                        Let&apos;s collaborate and create something exceptional together.
+                    </p>
+
+                    <Button
+                        asChild
+                        size="lg"
+                        variant="secondary"
+                        className="group mt-8 font-medium"
+                    >
+                        <Link href="#">
+                            Contact Me
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                    </Button>
+                </div>
             </div>
 
         </Wrapper>

@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import React from 'react'
 
@@ -13,6 +14,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children, className }) => {
             <div className={`${className}`}>
                 {children}
             </div>
+            <Footer />
         </div>
     )
 }
