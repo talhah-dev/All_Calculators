@@ -33,6 +33,9 @@ const Navbar = () => {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex gap-4">
+                    <Link href="/">
+                        <Button variant="ghost">Home</Button>
+                    </Link>
                     <Link href="/about">
                         <Button variant="ghost">About</Button>
                     </Link>
@@ -79,21 +82,24 @@ const Navbar = () => {
                         </SheetTrigger>
                         <SheetContent side="left">
                             <SheetHeader>
-                                <SheetTitle>Navigation Menu</SheetTitle>
+                                <SheetTitle>Website Name</SheetTitle>
                                 <SheetDescription>
                                     Explore the main sections of our website.
                                 </SheetDescription>
                             </SheetHeader>
                             <nav className="flex flex-col gap-4 ">
+                                <Link href="/">
+                                    <Button variant="ghost" className="w-full justify-start">Home</Button>
+                                </Link>
                                 <Link href="/about">
                                     <Button variant="ghost" className="w-full justify-start">About</Button>
                                 </Link>
 
-                                <Accordion className="px-4" type="single" collapsible>
+                                <Accordion className="px-4 " type="single" collapsible>
                                     <AccordionItem value="item-1">
-                                        <AccordionTrigger>Calculators</AccordionTrigger>
+                                        <AccordionTrigger className="py-0 my-0">Calculators</AccordionTrigger>
                                         <AccordionContent>
-                                            <Link className="block py-1" href="/calculators/loan">
+                                            <Link className="block pb-1" href="/calculators/loan">
                                                 <Button variant="ghost">Finance Calculator</Button>
                                             </Link>
                                             <Link className="block py-1" href="/calculators/financial">
@@ -102,7 +108,7 @@ const Navbar = () => {
                                             <Link className="block py-1" href="/calculators/mortgage">
                                                 <Button variant="ghost">Lifestyle Calculator</Button>
                                             </Link>
-                                            <Link className="block py-1" href="/calculators/mortgage">
+                                            <Link className="block pt-1" href="/calculators/mortgage">
                                                 <Button variant="ghost">Math Calculator</Button>
                                             </Link>
                                         </AccordionContent>
