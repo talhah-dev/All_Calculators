@@ -118,7 +118,7 @@ const Page = () => {
                                         cx="50%"
                                         cy="50%"
                                         innerRadius={60}
-                                        outerRadius={80}
+                                        outerRadius={95}
                                         fill="#8884d8"
                                         paddingAngle={2}
                                         dataKey="value"
