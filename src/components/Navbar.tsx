@@ -11,16 +11,8 @@ import {
     SheetTitle,
     SheetDescription,
 } from "@/components/ui/sheet"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Menu, ChevronDown } from "lucide-react"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
+import { Menu } from "lucide-react"
+import { siteConfig } from "@/lib/siteConfig"
 
 const Navbar = () => {
     return (
@@ -28,51 +20,43 @@ const Navbar = () => {
             <div className="container lg:px-20 mx-auto flex h-16 items-center justify-between px-4">
                 {/* Left: Logo */}
                 <Link href="/">
-                    <span className="text-lg tracking-wider font-semibold">MyLogo</span>
+                    <span className="text-lg tracking-wider font-semibold">{siteConfig.name}</span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex gap-4">
+                <nav className="hidden md:flex gap-1">
                     <Link href="/">
-                        <Button variant="ghost">Home</Button>
+                        <Button className="cursor-pointer" variant="ghost">Home</Button>
                     </Link>
                     <Link href="/about">
-                        <Button variant="ghost">About</Button>
+                        <Button className="cursor-pointer" variant="ghost">About</Button>
                     </Link>
-
-                    {/* Desktop Dropdown for Calculators */}
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="flex items-center gap-1">
-                                Calculators <ChevronDown className="h-4 w-4" />
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-48">
-                            <DropdownMenuLabel>Our Calculators</DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <Link href="/calculators/finance">
-                                <DropdownMenuItem>Finance Calculator</DropdownMenuItem>
-                            </Link>
-                            <Link href="/calculators/health">
-                                <DropdownMenuItem>Health Calculator</DropdownMenuItem>
-                            </Link>
-                            <Link href="/calculators/lifestyle">
-                                <DropdownMenuItem>Lifestyle Calculator</DropdownMenuItem>
-                            </Link>
-                            <Link href="/calculators/math">
-                                <DropdownMenuItem>Math Calculator</DropdownMenuItem>
-                            </Link>
-                            {/* Add more calculator links as needed */}
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-
+                    <Link href="/pricing">
+                        <Button className="cursor-pointer" variant="ghost">Pricing</Button>
+                    </Link>
+                    <Link href="/calculators">
+                        <Button className="cursor-pointer" variant="ghost">Calculators</Button>
+                    </Link>
                     <Link href="/blog">
-                        <Button variant="ghost">Blog</Button>
+                        <Button className="cursor-pointer" variant="ghost">Blog</Button>
                     </Link>
                     <Link href="/contact">
-                        <Button variant="ghost">Contact</Button>
+                        <Button className="cursor-pointer" variant="ghost">Contact</Button>
                     </Link>
                 </nav>
+
+                <div className="md:flex hidden items-center gap-2">
+                    <Link href={"/signup"}>
+                        <Button className="cursor-pointer">
+                            Sign up
+                        </Button>
+                    </Link>
+                    <Link href={"/login"}>
+                        <Button className="cursor-pointer" variant={"outline"}>
+                            Login
+                        </Button>
+                    </Link>
+                </div>
 
                 {/* Mobile Nav (Sheet Menu) */}
                 <div className="md:hidden">
@@ -82,44 +66,36 @@ const Navbar = () => {
                         </SheetTrigger>
                         <SheetContent side="left">
                             <SheetHeader>
-                                <SheetTitle>Website Name</SheetTitle>
+                                <SheetTitle>{siteConfig.name}</SheetTitle>
                                 <SheetDescription>
-                                    Explore the main sections of our website.
+                                    Navigate through the site using the menu below.
                                 </SheetDescription>
                             </SheetHeader>
-                            <nav className="flex flex-col gap-4 ">
+                            <nav className="flex flex-col p-4 gap-4 ">
                                 <Link href="/">
                                     <Button variant="ghost" className="w-full justify-start">Home</Button>
                                 </Link>
                                 <Link href="/about">
                                     <Button variant="ghost" className="w-full justify-start">About</Button>
                                 </Link>
-
-                                <Accordion className="px-4 " type="single" collapsible>
-                                    <AccordionItem value="item-1">
-                                        <AccordionTrigger className="py-0 my-0">Calculators</AccordionTrigger>
-                                        <AccordionContent>
-                                            <Link className="block pb-1" href="/calculators/loan">
-                                                <Button variant="ghost">Finance Calculator</Button>
-                                            </Link>
-                                            <Link className="block py-1" href="/calculators/financial">
-                                                <Button variant="ghost">Health Calculator</Button>
-                                            </Link>
-                                            <Link className="block py-1" href="/calculators/mortgage">
-                                                <Button variant="ghost">Lifestyle Calculator</Button>
-                                            </Link>
-                                            <Link className="block pt-1" href="/calculators/mortgage">
-                                                <Button variant="ghost">Math Calculator</Button>
-                                            </Link>
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                </Accordion>
-
+                                <Link href="/pricing">
+                                    <Button variant="ghost" className="w-full justify-start">Pricing</Button>
+                                </Link>
                                 <Link href="/blog">
                                     <Button variant="ghost" className="w-full justify-start">Blog</Button>
                                 </Link>
                                 <Link href="/contact">
                                     <Button variant="ghost" className="w-full justify-start">Contact</Button>
+                                </Link>
+                                <Link href={"/signup"}>
+                                    <Button className="cursor-pointer w-full">
+                                        Sign up
+                                    </Button>
+                                </Link>
+                                <Link href={"/login"}>
+                                    <Button className="cursor-pointer w-full" variant={"outline"}>
+                                        Login
+                                    </Button>
                                 </Link>
                             </nav>
                         </SheetContent>

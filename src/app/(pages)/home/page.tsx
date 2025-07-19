@@ -11,6 +11,7 @@ import Services from '@/components/Home/Services'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import BlogSectionSlider from '@/components/BlogSectionSlider'
+import { siteConfig } from '@/lib/siteConfig'
 
 const sciButtons = [
     ["sin", "cos", "tan", "Deg", "Rad"],
@@ -174,7 +175,7 @@ const Page = () => {
                         <div
                             className="inline-flex items-center gap-x-2 rounded-full border p-1 ps-3 text-sm transition"
                         >
-                            Welcome to WebsiteName
+                            Welcome to {siteConfig.name}
                             <span className="bg-muted-foreground/15 inline-flex items-center justify-center gap-x-2 rounded-full px-2.5 py-1.5 text-sm font-semibold">
                                 <svg
                                     className="h-4 w-4 flex-shrink-0"
@@ -194,7 +195,7 @@ const Page = () => {
                         </div>
                     </div>
                     <div className="mt-5 max-w-2xl lg:mx-0 lg:text-start text-center mx-auto">
-                        <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
+                        <h1 className="scroll-m-20 text-4xl font-bold lg:text-5xl">
                             Best Calculators
                         </h1>
                     </div>
@@ -391,7 +392,7 @@ const Page = () => {
                         variant="secondary"
                         className="group mt-8 font-medium"
                     >
-                        <Link href="#">
+                        <Link href="/calculators">
                             See All
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>

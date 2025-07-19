@@ -87,7 +87,7 @@ export default function Services() {
 
                     <div className="mt-12 text-center">
                         <Button asChild size={"lg"}>
-                            <Link href="#" className="inline-flex items-center gap-2">
+                            <Link href="/calculators" className="inline-flex items-center gap-2">
                                 <span>View all Calculators</span>
                                 <ArrowRight className="h-3.5 w-3.5" />
                             </Link>

@@ -59,7 +59,7 @@ const companyValues: CompanyValue[] = [
         ],
         testimonial: {
             quote:
-                "Working in an environment that truly values innovation isn&apos;t just about having the latest technology—it&apos;s about feeling empowered to question, experiment, and sometimes fail. This culture has allowed us to develop solutions no one else has thought of yet.",
+                "Working in an environment that truly values innovation is not just about having the latest technology—its about feeling empowered to question, experiment, and sometimes fail. This culture has allowed us to develop solutions no one else has thought of yet.",
             author: "Alex Chen",
             role: "Lead Product Engineer",
             image:
@@ -77,13 +77,13 @@ const companyValues: CompanyValue[] = [
         color: "text-blue-500",
         principles: [
             "Be honest and transparent in all communications",
-            "Do what&apos;s right, even when it&apos;s difficult",
+            "Do whats right, even when its difficult",
             "Keep commitments and take accountability for mistakes",
             "Protect private data and confidential information",
         ],
         testimonial: {
             quote:
-                "In my ten years with the company, I&apos;ve seen us turn down lucrative opportunities that didn&apos;t align with our ethical standards. That consistent commitment to integrity isn&apos;t just good ethics—it&apos;s built an unparalleled level of trust with our customers.",
+                "In my ten years with the company, Ive seen us turn down lucrative opportunities that didnt align with our ethical standards. That consistent commitment to integrity isnt just good ethics—its built an unparalleled level of trust with our customers.",
             author: "Sarah Johnson",
             role: "Senior Account Director",
             image:
@@ -107,7 +107,7 @@ const companyValues: CompanyValue[] = [
         ],
         testimonial: {
             quote:
-                "The collaborative spirit here isn&apos;t just talk—it&apos;s built into how we work. Even as we&apos;ve grown to multiple offices globally, we&apos;ve maintained a culture where everyone&apos;s input is valued and people genuinely enjoy working together to solve challenging problems.",
+                "The collaborative spirit here isnt just talk—its built into how we work. Even as weve grown to multiple offices globally, weve maintained a culture where everyones input is valued and people genuinely enjoy working together to solve challenging problems.",
             author: "Miguel Hernandez",
             role: "Global Operations Manager",
             image:
@@ -120,7 +120,7 @@ const companyValues: CompanyValue[] = [
         id: "customer-focus",
         name: "Customer Focus",
         description:
-            "Our customers are at the center of everything we do. We&apos;re committed to understanding their needs, exceeding their expectations, and building lasting relationships based on mutual success.",
+            "Our customers are at the center of everything we do. Were committed to understanding their needs, exceeding their expectations, and building lasting relationships based on mutual success.",
         icon: Heart,
         color: "text-red-500",
         principles: [
@@ -131,7 +131,7 @@ const companyValues: CompanyValue[] = [
         ],
         testimonial: {
             quote:
-                "I&apos;ve been amazed at how customer feedback directly shapes our product roadmap. When I joined, I expected the usual lip service to customer-centricity, but here, customer success genuinely drives every decision from product features to support policies.",
+                "Ive been amazed at how customer feedback directly shapes our product roadmap. When I joined, I expected the usual lip service to customer-centricity, but here, customer success genuinely drives every decision from product features to support policies.",
             author: "Avery Wilson",
             role: "Customer Success Lead",
             image:
@@ -155,7 +155,7 @@ const companyValues: CompanyValue[] = [
         ],
         testimonial: {
             quote:
-                "The most inspiring thing about working here is how everyone strives for excellence while remaining humble. There&apos;s always a sense that we can do better—not from a place of dissatisfaction, but from genuine passion for creating the best possible experience for our users.",
+                "The most inspiring thing about working here is how everyone strives for excellence while remaining humble. Theres always a sense that we can do better—not from a place of dissatisfaction, but from genuine passion for creating the best possible experience for our users.",
             author: "Jordan Taylor",
             role: "Quality Assurance Director",
             image:
@@ -179,7 +179,7 @@ const companyValues: CompanyValue[] = [
         ],
         testimonial: {
             quote:
-                "When we announced our carbon-neutral initiative, I wasn&apos;t sure if it would be more than a marketing exercise. Three years later, we&apos;ve reduced emissions by 68%, switched to renewable energy, and built sustainability requirements into our entire supply chain. It&apos;s real change.",
+                "When we announced our carbon-neutral initiative, I wasnt sure if it would be more than a marketing exercise. Three years later, weve reduced emissions by 68%, switched to renewable energy, and built sustainability requirements into our entire supply chain. Its real change.",
             author: "Priya Patel",
             role: "Sustainability Program Manager",
             image:
@@ -211,7 +211,7 @@ export default function Page() {
                             What Guides Our Decisions
                         </h2>
                         <p className="text-muted-foreground">
-                            Our values aren&apos;t just words on a wall—they&apos;re the
+                            Our values arent just words on a wall—theyre the
                             principles that guide our daily actions and long-term vision,
                             shaping our culture and driving our success.
                         </p>

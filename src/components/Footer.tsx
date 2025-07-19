@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/siteConfig";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,38 +8,26 @@ export default function Footer() {
                 <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
                     <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
                         <Link
-                            href="https://nextjs.org"
+                            href="/"
                             target="_blank"
                             rel="noreferrer"
                             className="font-medium underline underline-offset-4"
                         >
-                            Website Name
-                        </Link>{" "}
+                            {siteConfig.name}
+                        </Link>
                     </p>
                 </div>
                 <div className="flex flex-col items-center gap-4 md:flex-row md:gap-6">
                     <nav className="flex gap-4 md:gap-6">
                         <Link
-                            href="#"
+                            href="/terms"
                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                         >
-                            Terms
-                        </Link>
-                        <Link
-                            href="#"
-                            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                        >
-                            Privacy
-                        </Link>
-                        <Link
-                            href="#"
-                            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                        >
-                            Contact
+                            Terms and Conditions 
                         </Link>
                     </nav>
                     <p className="text-center text-sm text-muted-foreground md:text-left">
-                        &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+                        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
                     </p>
                 </div>
             </div>
