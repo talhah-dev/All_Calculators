@@ -42,7 +42,7 @@ const page = () => {
                                 <div className="flex">
                                     <div className="ml-3">
                                         <p className="text-sm text-yellow-700">
-                                            The materials on this website are provided on an 'as is' basis. We make no warranties, expressed or
+                                            The materials on this website are provided on an as is basis. We make no warranties, expressed or
                                             implied, and hereby disclaim and negate all other warranties including, without limitation, implied
                                             warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of
                                             intellectual property or other violation of rights.

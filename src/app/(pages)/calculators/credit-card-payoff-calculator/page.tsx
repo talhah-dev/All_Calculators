@@ -9,7 +9,7 @@ import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 
 const COLORS = ["#000", "#808080"];
 
-const page = () => {
+const Page = () => {
 
     const [loanAmount, setLoanAmount] = useState(500);
     const [monthlyPayment, setMonthlyPayment] = useState(100);
@@ -140,4 +140,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

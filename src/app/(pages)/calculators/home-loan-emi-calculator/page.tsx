@@ -6,7 +6,7 @@ import { Slider } from "@/components/ui/slider"
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 
-const page = () => {
+const Page = () => {
 
     const [amount, setAmount] = useState(2500000)
     const [tenure, setTenure] = useState(30)
@@ -130,4 +130,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
